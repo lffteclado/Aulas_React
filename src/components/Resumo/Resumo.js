@@ -16,6 +16,11 @@ class Resumo extends Component{
         }
     }
 
+    componentDidMount(){
+        fetch("http://192.168.1.38:3001/api/clinica/consulta")
+        .then(resultado => resultado.json().then(dados => this.setState(dados)));
+    }
+
     render(){
         return(
             <div>
